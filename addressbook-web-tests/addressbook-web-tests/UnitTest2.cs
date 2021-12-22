@@ -64,7 +64,6 @@ namespace addressbook_web_tests
       driver.FindElement(By.Name("group_footer")).SendKeys("q");
       driver.FindElement(By.Name("submit")).Click();
       driver.FindElement(By.LinkText("group page")).Click();
-      Thread.Sleep(1000);
     }
     private bool IsElementPresent( By by )
     {
