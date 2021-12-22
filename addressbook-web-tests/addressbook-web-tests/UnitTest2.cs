@@ -44,17 +44,12 @@ namespace addressbook_web_tests
     {
       driver.Navigate().GoToUrl(baseURL);
       driver.FindElement(By.Name("user")).Click();
-      driver.FindElement(By.Name("pass")).Clear();
-      driver.FindElement(By.Name("pass")).SendKeys("secret");
-      driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
-      driver.FindElement(By.Name("user")).Click();
       driver.FindElement(By.Name("user")).Clear();
       driver.FindElement(By.Name("user")).SendKeys("admin");
-      driver.FindElement(By.Id("LoginForm")).Click();
       driver.FindElement(By.Name("pass")).Click();
       driver.FindElement(By.Name("pass")).Clear();
       driver.FindElement(By.Name("pass")).SendKeys("secret");
-      driver.FindElement(By.XPath("//input[@value='Login']")).Click();
+      driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
       Thread.Sleep(1000);
       driver.FindElement(By.LinkText("groups")).Click();
       driver.FindElement(By.Name("new")).Click();
@@ -70,12 +65,6 @@ namespace addressbook_web_tests
       driver.FindElement(By.Name("submit")).Click();
       driver.FindElement(By.LinkText("group page")).Click();
       Thread.Sleep(1000);
-      //driver.FindElement(By.LinkText("Logout")).Click();
-      //driver.FindElement(By.Name("user")).SendKeys("admin");
-      //driver.FindElement(By.LinkText("groups")).Click();
-      //driver.FindElement(By.LinkText("Logout")).Click();
-      driver.FindElement(By.Name("user")).Clear();
-      driver.FindElement(By.Name("user")).SendKeys("admin");
     }
     private bool IsElementPresent( By by )
     {
